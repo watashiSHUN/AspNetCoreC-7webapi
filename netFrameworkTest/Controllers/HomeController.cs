@@ -10,9 +10,15 @@ namespace netFrameworkTest.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ReturnStr(out string temp);
+            ViewBag.Title = temp;
 
             return View();
+        }
+
+        private void ReturnStr(out string temp)
+        {
+            temp = "Home Page From New Syntax";
         }
     }
 }

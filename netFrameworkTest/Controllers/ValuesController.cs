@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace netFrameworkTest.Controllers
@@ -15,10 +12,16 @@ namespace netFrameworkTest.Controllers
             return new string[] { "value1", "value2" };
         }
 
+        private void ReturnStr(out string str1)
+        {
+            str1 = "new out syntax";
+        }
+
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            ReturnStr(out string temp);
+            return temp;
         }
 
         // POST api/values
